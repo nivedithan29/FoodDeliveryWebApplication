@@ -1,2 +1,0 @@
-FROM tomcat:9.0
-COPY FoodDeliveryApp.war /usr/local/tomcat/webapps/ROOT.war
