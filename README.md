@@ -204,6 +204,4 @@ http://localhost:8080/FoodDeliveryApp
 
 ---
 
-## 👩‍💻 Developed By
-
-      Niveditha
+## 👩‍💻 Developed by Niveditha N
