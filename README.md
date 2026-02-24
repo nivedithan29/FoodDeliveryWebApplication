@@ -1,228 +1,209 @@
 # 🍔 Food Delivery Web Application
 
-A complete full-stack **Food Ordering Web Application** built using **Java (JSP & Servlets), MySQL, HTML, CSS and Apache Tomcat**.  
-This system allows users to browse food items, manage cart, place orders and view order history through a clean and simple interface.
+A full-stack Food Ordering Web Application developed using Java (JSP & Servlets), MySQL, JDBC, HTML, CSS, and Apache Tomcat.  
+This system allows users to browse food items, manage cart, place orders, and view order history through a clean and structured interface.
 
-The project follows **MVC (Model-View-Controller)** architecture and demonstrates real-world dynamic web application development from scratch.
-
----
-
-## 📌 Project Overview
-
-This application simulates a real online food ordering system where users can:
-
-- Create account and login securely
-- Browse food menu by category
-- Search food items instantly
-- Add items to cart
-- Update quantity / remove items
-- Place orders
-- View order history
-- Admin manages food items
-- Fully database driven system
+The application follows MVC (Model-View-Controller) architecture and demonstrates complete dynamic web application development.
 
 ---
 
-## 🧠 Technology Stack
+## 📌 Project Objective
 
-**Frontend**
+To design and implement a complete food ordering system that simulates real-world online food delivery platforms.  
+The project focuses on backend logic, database integration, session management, and user-friendly UI design.
+
+---
+
+## 🚀 Features
+
+### 👤 User Module
+- User Registration & Login
+- Session-based Authentication
+- Browse Food Menu by Category
+- Search Food Items
+- Add to Cart
+- Update Quantity / Remove Items
+- Place Order
+- View Order History
+
+### 🛠 Admin Module
+- Add Food Items
+- Delete Food Items
+- Manage Menu Dynamically
+
+### 💾 System Features
+- MySQL Database Integration
+- JDBC Connectivity
+- MVC Architecture
+- Session Management
+- Dynamic Content Rendering
+- Clean Orange + White UI Design
+
+---
+
+## 🛠 Technology Stack
+
+Frontend:
 - HTML
 - CSS
 - JSP
 
-**Backend**
-- Java Servlets
+Backend:
+- Java
+- Servlets
 - JDBC
 
-**Database**
+Database:
 - MySQL
 
-**Server**
+Server:
 - Apache Tomcat 10
 
-**Tools Used**
+Tools:
 - Eclipse IDE
 - Git & GitHub
 
 ---
 
-## ✨ Features
+## 🏗 Project Structure
 
-### 👤 User Module
-- User Registration & Login
-- Session based authentication
-- Browse food by category
-- Search food instantly
-- Add to cart
-- Increase / Decrease quantity
-- Remove items from cart
-- Place order
-- View order history
-
-### 🛠 Admin Module
-- Add new food items
-- Delete food items
-- Manage menu dynamically
-
----
-
-## 🗂 Project Structure
-
-```
-FoodDeliveryApp/
-│
-├── src/
-│   ├── com.food.dao
-│   ├── com.food.model
-│   ├── com.food.servlet
-│   └── com.food.util
-│
-├── WebContent/
-│   ├── images/
-│   ├── style.css
-│   ├── home.jsp
-│   ├── menu.jsp
-│   ├── cart.jsp
-│   ├── login.jsp
-│   ├── register.jsp
-│   ├── admin.jsp
-│   ├── orderHistory.jsp
-│   ├── payment.jsp
-│   └── orderSuccess.jsp
-│
-└── README.md
-```
+FoodDeliveryApp  
+│  
+├── src/main/java/com/food  
+│   ├── dao (FoodDAO, UserDAO, OrderDAO)  
+│   ├── model (Food, User)  
+│   ├── servlet (AddFood, DeleteFood, SearchFood, etc.)  
+│   └── util (DBConnection)  
+│  
+├── src/main/webapp  
+│   ├── images  
+│   ├── style.css  
+│   ├── home.jsp  
+│   ├── menu.jsp  
+│   ├── cart.jsp  
+│   ├── login.jsp  
+│   ├── register.jsp  
+│   ├── orderHistory.jsp  
+│   ├── orderSuccess.jsp  
+│   └── admin.jsp  
 
 ---
 
 ## ⚙️ How to Run the Project
 
-### 1️⃣ Clone Repository
-
-```
-git clone https://github.com/your-username/FoodDeliveryApp.git
-```
-
----
-
-### 2️⃣ Import into Eclipse
-
-- Open Eclipse
-- File → Import → Existing Projects into Workspace
-- Select project folder
-- Add Apache Tomcat Server
-- Run on Server
+### 1️⃣ Requirements
+- Java 17+
+- MySQL
+- Apache Tomcat 10
+- Eclipse IDE
 
 ---
 
-### 3️⃣ Setup Database
+### 2️⃣ Database Setup
 
 Create database:
 
 ```sql
-CREATE DATABASE fooddb;
-USE fooddb;
+CREATE DATABASE foodapp;
+USE foodapp;
 ```
 
-Create tables:
+Create Users Table:
 
 ```sql
 CREATE TABLE users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100),
-  email VARCHAR(100),
-  password VARCHAR(100)
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(100)
 );
+```
 
-CREATE TABLE food_items (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100),
-  price DOUBLE,
-  category VARCHAR(50),
-  image VARCHAR(100)
+Create Food Table:
+
+```sql
+CREATE TABLE food (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    price DOUBLE,
+    category VARCHAR(50),
+    image VARCHAR(100)
 );
+```
 
+Create Orders Table:
+
+```sql
 CREATE TABLE orders (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  user_email VARCHAR(100),
-  food_name VARCHAR(100),
-  price DOUBLE,
-  quantity INT,
-  order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_email VARCHAR(100),
+    food_name VARCHAR(100),
+    price DOUBLE,
+    quantity INT,
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
 ---
 
-### 4️⃣ Configure Database Connection
+### 3️⃣ Configure Database
 
-Edit **DBConnection.java**
+Update DBConnection.java:
 
 ```java
-String url = "jdbc:mysql://localhost:3306/fooddb";
+String url = "jdbc:mysql://localhost:3306/foodapp";
 String user = "root";
-String pass = "your-password";
+String password = "your_password";
 ```
 
 ---
 
-### 5️⃣ Run Application
+### 4️⃣ Run Application
 
-Open browser:
+- Import project into Eclipse
+- Add MySQL Connector JAR
+- Run on Apache Tomcat
+- Open in browser:
 
-```
 http://localhost:8080/FoodDeliveryApp
-```
 
 ---
 
-## 💳 Payment
+## 📸 Screenshots Included
 
-This project currently uses **demo payment simulation** only.  
-No real payment gateway is integrated.
+- Login Page  
+- Register Page  
+- Dashboard  
+- Food Menu  
+- Cart Page  
+- Order History  
+- Admin Panel  
+- Order Success Page  
 
 ---
 
-## 📸 Screenshots
+## 🔮 Future Improvements
 
-Add screenshots inside a folder named **screenshots** in this repository.
-
-Recommended screenshots:
-- Login Page
-- Register Page
-- Dashboard
-- Food Menu
-- Cart Page
-- Order History
-- Payment Page
+- Online Payment Integration (Razorpay / Stripe)
+- Mobile Responsive UI
+- Order Tracking System
+- Admin Analytics Dashboard
+- Cloud Deployment
 
 ---
 
 ## 🎯 Learning Outcomes
 
-- Full stack Java web development
-- JSP & Servlet architecture
-- JDBC + MySQL integration
-- Session management
-- CRUD operations
-- MVC design pattern
-- UI/UX structuring
-- Git & GitHub workflow
-
----
-
-## 🚀 Future Improvements
-
-- Mobile responsive UI
-- Real payment gateway (UPI / Razorpay / Stripe)
-- Order tracking system
-- Admin analytics dashboard
-- Image upload from admin panel
-- Email notifications
-- Cloud deployment
+- Full Stack Java Web Development
+- MVC Architecture
+- JDBC & MySQL Integration
+- Session Handling
+- CRUD Operations
+- Project Structuring & Debugging
+- Git & GitHub Workflow
 
 ---
 
 ## 👩‍💻 Developed By
 
-**Niveditha**
+Niveditha
