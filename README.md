@@ -85,7 +85,7 @@ FoodDeliveryApp
 │   ├── register.jsp  
 │   ├── orderHistory.jsp  
 │   ├── orderSuccess.jsp  
-│   └── admin.jsp  
+    └── admin.jsp  
 
 ---
 
@@ -181,6 +181,15 @@ http://localhost:8080/FoodDeliveryApp
 - Order Success Page  
 
 ---
+
+## 🎥 Live Project Demo
+
+A complete walkthrough of the Food Delivery Web Application including user flow, cart system, and admin panel.
+
+▶️ Watch Demo:  
+https://www.loom.com/share/ad7ae07f08b64c92a55f8602d1fccd80
+
+ ---
 
 ## 🔮 Future Improvements
 
