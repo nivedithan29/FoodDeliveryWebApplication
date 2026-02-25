@@ -85,7 +85,7 @@ FoodDeliveryApp
 │   ├── register.jsp  
 │   ├── orderHistory.jsp  
 │   ├── orderSuccess.jsp  
-|   └── admin.jsp  
+|    └── admin.jsp  
 
 ---
 
