@@ -1,16 +1,28 @@
 # 🍔 Food Delivery Web Application
 
-A full-stack Food Ordering Web Application developed using Java (JSP & Servlets), MySQL, JDBC, HTML, CSS, and Apache Tomcat.  
-This system allows users to browse food items, manage cart, place orders, and view order history through a clean and structured interface.
+A Full Stack Food Ordering Web Application developed using **Java (JSP & Servlets), MySQL, JDBC, HTML, CSS, and Apache Tomcat**.
 
-The application follows MVC (Model-View-Controller) architecture and demonstrates complete dynamic web application development.
+This application allows users to browse food items, manage cart, place orders, and view order history.  
+The system follows **MVC (Model-View-Controller) Architecture** to ensure clean code structure and maintainability.
 
 ---
 
 ## 📌 Project Objective
 
-To design and implement a complete food ordering system that simulates real-world online food delivery platforms.  
-The project focuses on backend logic, database integration, session management, and user-friendly UI design.
+To design and implement a real-world food ordering system that simulates online food delivery platforms.  
+The project focuses on backend logic, session management, database integration, and dynamic content rendering.
+
+---
+
+## 🏗 Architecture Overview
+
+The application follows MVC architecture:
+
+User → JSP (View) → Servlet (Controller) → DAO (Model) → MySQL Database
+
+- **Model** – Handles business logic & database operations (DAO classes)
+- **View** – JSP pages for UI rendering
+- **Controller** – Servlets to process requests and manage flow
 
 ---
 
@@ -37,55 +49,68 @@ The project focuses on backend logic, database integration, session management, 
 - MVC Architecture
 - Session Management
 - Dynamic Content Rendering
-- Clean Orange + White UI Design
+- Clean Orange & White UI Design
 
 ---
 
 ## 🛠 Technology Stack
 
-Frontend:
-- HTML
-- CSS
-- JSP
-
-Backend:
+### 💻 Backend
 - Java
 - Servlets
 - JDBC
 
-Database:
+### 🎨 Frontend
+- HTML
+- CSS
+- JSP
+
+### 🗄 Database
 - MySQL
 
-Server:
+### 🖥 Server
 - Apache Tomcat 10
 
-Tools:
+### 🧰 Tools
 - Eclipse IDE
 - Git & GitHub
 
 ---
 
-## 🏗 Project Structure
+## 📂 Project Structure
 
-FoodDeliveryApp  
-│  
-├── src/main/java/com/food  
-│   ├── dao (FoodDAO, UserDAO, OrderDAO)  
-│   ├── model (Food, User)  
-│   ├── servlet (AddFood, DeleteFood, SearchFood, etc.)  
-│   └── util (DBConnection)  
-│  
-├── src/main/webapp  
-│   ├── images  
-│   ├── style.css  
-│   ├── home.jsp  
-│   ├── menu.jsp  
-│   ├── cart.jsp  
-│   ├── login.jsp  
-│   ├── register.jsp  
-│   ├── orderHistory.jsp  
-│   ├── orderSuccess.jsp  
-|    └── admin.jsp  
+```
+FoodDeliveryApp
+│
+├── src/main/java/com/food
+│   ├── dao (FoodDAO, UserDAO, OrderDAO)
+│   ├── model (Food, User)
+│   ├── servlet (AddFoodServlet, DeleteFoodServlet, SearchFoodServlet, etc.)
+│   └── util (DBConnection)
+│
+├── src/main/webapp
+│   ├── images
+│   ├── style.css
+│   ├── home.jsp
+│   ├── menu.jsp
+│   ├── cart.jsp
+│   ├── login.jsp
+│   ├── register.jsp
+│   ├── orderHistory.jsp
+│   ├── orderSuccess.jsp
+│   └── admin.jsp
+```
+
+---
+
+## 🔄 Application Flow
+
+1. User registers and logs in
+2. Login creates a session
+3. Menu is fetched dynamically from database
+4. Cart is stored in session
+5. Order details inserted into database
+6. Order history retrieved using DAO layer
 
 ---
 
@@ -146,9 +171,9 @@ CREATE TABLE orders (
 
 ---
 
-### 3️⃣ Configure Database
+### 3️⃣ Configure Database Connection
 
-Update DBConnection.java:
+Update `DBConnection.java`:
 
 ```java
 String url = "jdbc:mysql://localhost:3306/foodapp";
@@ -158,53 +183,65 @@ String password = "your_password";
 
 ---
 
-### 4️⃣ Run Application
+### 4️⃣ Run the Application
 
-- Import project into Eclipse
-- Add MySQL Connector JAR
-- Run on Apache Tomcat
-- Open in browser:
+1. Import project into Eclipse
+2. Add MySQL Connector JAR
+3. Configure Apache Tomcat
+4. Run project on server
+5. Open in browser:
 
+```
 http://localhost:8080/FoodDeliveryApp
+```
 
 ---
 
-## 📸 Screenshots Included
+## 📸 Screenshots
 
-- Login Page  
-- Register Page  
-- Dashboard  
-- Food Menu  
-- Cart Page  
-- Order History  
-- Admin Panel  
-- Order Success Page  
+(Add screenshots inside /screenshots folder and link here)
+
+```
+![Login Page](screenshots/login.png)
+![Menu Page](screenshots/menu.png)
+![Cart Page](screenshots/cart.png)
+![Admin Panel](screenshots/admin.png)
+```
 
 ---
 
-## 🎥 Live Project Demo
+## 🎥 Live Demo
 
-A complete walkthrough of the Food Delivery Web Application including user flow, cart system, and admin panel.
-
-▶️ Watch Demo:  
+▶ Watch Demo:  
 https://www.loom.com/share/ad7ae07f08b64c92a55f8602d1fccd80
 
- ---
+---
+
+## 🚧 Challenges Faced
+
+- Managing session after login
+- Maintaining cart state across pages
+- Handling dynamic data rendering in JSP
+- JDBC connection management
+- Designing clean MVC structure
+
+---
 
 ## 🔮 Future Improvements
 
+- Password Encryption (BCrypt)
 - Online Payment Integration (Razorpay / Stripe)
 - Mobile Responsive UI
 - Order Tracking System
 - Admin Analytics Dashboard
-- Cloud Deployment
+- Cloud Deployment (AWS / Render)
 
 ---
 
 ## 🎯 Learning Outcomes
 
 - Full Stack Java Web Development
-- MVC Architecture
+- MVC Architecture Implementation
 - JDBC & MySQL Integration
 - Session Handling
 - CRUD Operations
@@ -213,4 +250,9 @@ https://www.loom.com/share/ad7ae07f08b64c92a55f8602d1fccd80
 
 ---
 
-## 👩‍💻 Developed by Niveditha N
+## 👩‍💻 Developed By
+
+**Niveditha N**  
+
+
+✨ Keep Learning • Keep Building • Keep Growing ✨
